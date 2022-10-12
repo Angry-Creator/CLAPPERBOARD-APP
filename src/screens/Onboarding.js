@@ -9,7 +9,7 @@ export default function Onboarding() {
             <Image style={styles.image} resizeMode="cover" source={require('../../assets/images/onboard_image.png')}/>
             <Text style={styles.title}>Onboarding</Text>
             <Text style={styles.subTitle}>Watch everything you want for free</Text>
-            <GradientButton text={"Enter Now"}/>
+            <GradientButton text={"Enter Now"} onPress={()=>{alert('Hello World!');}}/>
         </View>
     )
 }

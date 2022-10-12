@@ -1,5 +1,4 @@
 import { LinearGradient } from 'expo-linear-gradient';
-import React from 'react';
 import { StyleSheet, View, Text, Platform, StatusBar, TextInput, Image} from 'react-native';
 
 export default function SearchPage() {
