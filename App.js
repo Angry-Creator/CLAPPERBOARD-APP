@@ -1,10 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import SearchPage from './src/screens/SearchPage';
+import Onboarding from './src/screens/Onboarding';
 
 export default function App() {
   return (
-    <SearchPage/>
+    // <SearchPage/>
+    <Onboarding />
   );
 }
 

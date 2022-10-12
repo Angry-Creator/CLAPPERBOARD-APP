@@ -1,0 +1,4 @@
+//For gradient background
+npm i expo-linear-gradient
+//link of the source
+https://docs.expo.dev/versions/latest/sdk/linear-gradient/
