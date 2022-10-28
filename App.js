@@ -3,12 +3,14 @@ import { StyleSheet, Text, View } from 'react-native';
 import SearchPage from './src/screens/SearchPage';
 import Onboarding from './src/screens/Onboarding';
 import Dashboard from './src/screens/Dashboard';
+import MovieInfo from './src/screens/MovieInfo';
 
 export default function App() {
   return (
-    // <SearchPage/>
     // <Onboarding />
-    <Dashboard/>
+    // <Dashboard/>
+    // <SearchPage/>
+    <MovieInfo/>
   );
 }
 
@@ -19,5 +21,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-
 });
