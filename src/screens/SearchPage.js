@@ -1,6 +1,7 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import { StyleSheet, View, Text, Platform, StatusBar, TextInput, Image, FlatList } from 'react-native';
 import CategoryCard from '../components/CategoryCard';
+import GradientInput from '../components/GradientInput';
 import MovieCard from '../components/MovieCard';
 
 export default function SearchPage() {
@@ -35,20 +36,18 @@ export default function SearchPage() {
     return (
         <View style={styles.SearchPageContainer}>
             <Text style={styles.textSearchContent}>Seach for content</Text>
-            <LinearGradient style={styles.InputWrapper} start={[0, 0]} end={[1, 0]} locations={[0.3, 0.7]} colors={['rgba(25, 161, 190, 0.6)', 'rgba(125, 65, 146, 0.6)']}>
-                <View style={styles.Input}>
-                    <TextInput style={styles.textInput} placeholder={'Search for a content.'} placeholderTextColor={'#6C6C6C'} />
-                </View>
-            </LinearGradient>
+            <View style={styles.InputWrapper}>
+                <GradientInput />
+            </View>
             <Text style={styles.textCategories}>Categories.</Text>
 
-            {/* <Image resizeMode='cover' source={require('../../assets/images/image1.png')} style={styles.imageStyler} /> */}
-            <View style={{flexDirection: "row"}}>
-                <CategoryCard reverse={false} text={"Movie"} subText={"532 Titiles"}/>
-                <CategoryCard reverse={true} text={"Anime"} subText={"532 Titiles"} backgroundColor={['#FF2E2E', '#E08939']}/>
+
+            <View style={{ flexDirection: "row" }}>
+                <CategoryCard reverse={false} text={"Movie"} subText={"532 Titiles"} />
+                <CategoryCard reverse={true} text={"Anime"} subText={"532 Titiles"} backgroundColor={['#FF2E2E', '#E08939']} />
             </View>
 
-            <Text style={[styles.textCategories, { marginBottom: 10 }]}>Most Searched.</Text>
+            <Text style={[styles.textCategories, { marginBottom: 10, marginTop: 30 }]}>Most Searched.</Text>
             <View>
                 <FlatList style={{ paddingVertical: 10, marginBottom: 5 }} data={recommendedMovieData1} renderItem={renderOthersItem} ItemSeparatorComponent={renderDataItemSeperator} horizontal={true} />
                 <FlatList style={{ paddingVertical: 10 }} data={recommendedMovieData2} renderItem={renderOthersItem} ItemSeparatorComponent={renderDataItemSeperator} horizontal={true} />
@@ -71,13 +70,7 @@ const styles = StyleSheet.create({
         lineHeight: 25,
     },
     InputWrapper: {
-        width: "100%",
-        height: 50,
         marginTop: 15,
-        borderRadius: 30,
-        justifyContent: "center",
-        alignItems: "center",
-        padding: 2,
     },
     Input: {
         width: "100%",

@@ -6,7 +6,7 @@ import ContinueWatchingCard from '../components/ContinueWatchingCard';
 import MovieCard from '../components/MovieCard';
 
 
-export default function Dashboard() {
+export default function Dashboard({ navigation }) {
   //Continue Movie Data
   const continueWatchingData = [{
     title: "X-MEN APOCALYPSE", subTitle: "T.1 Episode 1", image: require("../../assets/images/xmen.jpg"), progress: "80%"
@@ -75,7 +75,7 @@ export default function Dashboard() {
         </View>
         {/* Button Section */}
         <TouchableOpacity style={styles.headerBtnSection}>
-          <MaterialIcons name="dehaze" size={30} color={"white"} />
+          <MaterialIcons name="dehaze" size={30} color={"white"} onPress={()=> navigation.navigate("SearchPage")}/>
         </TouchableOpacity>
       </View>
 

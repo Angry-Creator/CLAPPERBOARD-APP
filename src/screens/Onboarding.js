@@ -1,15 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import { View, Text, StyleSheet, Image, Platform} from 'react-native';
+import { View, Text, StyleSheet, Image, Platform, Alert} from 'react-native';
 import GradientButton from '../components/GradientButton';
 
 
-export default function Onboarding() {
+export default function Onboarding({ navigation }) {
     return (
         <View style={styles.container}>
             <Image style={styles.image} resizeMode="cover" source={require('../../assets/images/onboard_image.png')}/>
             <Text style={styles.title}>Onboarding</Text>
             <Text style={styles.subTitle}>Watch everything you want for free</Text>
-            <GradientButton text={"Enter Now"} onPress={()=>{alert('Hello World!');}}/>
+            <GradientButton text={"Enter Now"} onPress={() => navigation.navigate("Dashboard")}/>
         </View>
     )
 }

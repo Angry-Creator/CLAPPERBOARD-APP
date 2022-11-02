@@ -1,4 +1,4 @@
-import { Platform, StatusBar, StyleSheet, View, Image } from 'react-native';
+import { StyleSheet, View, Image } from 'react-native';
 import MovieDescription from '../components/MovieDescription';
 import GradientButton from "../components/GradientButton";
 import Actor from '../components/Actor';
@@ -39,10 +39,10 @@ export default function MovieInfo() {
     )
 }
 
-// MovieBanner - 0.5 
-// movieDescription - 0.2
-// actorsContainer - 0.2
-// gradientButtonContainer 0.1
+// MovieBanner - 0.47
+// movieDescription - 0.22
+// actorsContainer - 0.22
+// gradientButtonContainer 0.15
 
 const styles = StyleSheet.create({
     BannerContainer: {
@@ -54,11 +54,11 @@ const styles = StyleSheet.create({
     },
     MovieInfocontainer: {
         flex: 1,
-        // paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
         backgroundColor: "#18181B",
     },
     movieDescriptionContainer: {
         flex: 0.22,
+        overflow: "hidden",
     },
     gradientButtonContainer: {
         flex: 0.15,
