@@ -4,25 +4,26 @@ import CategoryCard from '../components/CategoryCard';
 import GradientInput from '../components/GradientInput';
 import MovieCard from '../components/MovieCard';
 
-export default function SearchPage() {
+export default function SearchPage({ navigation }) {
+    let randomText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex...";
     //Recommeded Movie Data
     const recommendedMovieData1 = [
-        { title: "DORA", subTitle: "2022", image: require("../../assets/images/dora.jpg") },
-        { title: "Black Panther", subTitle: "2022", image: require("../../assets/images/blackpanther.jpg") },
-        { title: "Avengers: Infinity War", subTitle: "2022", image: require("../../assets/images/infinitywar.jpg") },
-        { title: "Secret War", subTitle: "2022", image: require("../../assets/images/secret-war.png") }
+        { title: "DORA", subTitle: "2022", image: require("../../assets/images/dora.jpg"), studio: "Marvel Studio", text: randomText },
+        { title: "Black Panther", subTitle: "2022", image: require("../../assets/images/blackpanther.jpg"), studio: "Marvel Studio", text: randomText },
+        { title: "Avengers: Infinity War", subTitle: "2022", image: require("../../assets/images/infinitywar.jpg"), studio: "Marvel Studio", text: randomText },
+        { title: "Secret War", subTitle: "2022", image: require("../../assets/images/secret-war.png"), studio: "Marvel Studio", text: randomText }
     ];
     const recommendedMovieData2 = [
-        { title: "DORA", subTitle: "2022", image: require("../../assets/images/dora.jpg") },
-        { title: "Black Panther", subTitle: "2022", image: require("../../assets/images/blackpanther.jpg") },
-        { title: "Avengers: Infinity War", subTitle: "2022", image: require("../../assets/images/infinitywar.jpg") },
-        { title: "Secret War", subTitle: "2022", image: require("../../assets/images/secret-war.png") }
+        { title: "DORA", subTitle: "2022", image: require("../../assets/images/dora.jpg"), studio: "Marvel Studio", text: randomText },
+        { title: "Black Panther", subTitle: "2022", image: require("../../assets/images/blackpanther.jpg"), studio: "Marvel Studio", text: randomText },
+        { title: "Avengers: Infinity War", subTitle: "2022", image: require("../../assets/images/infinitywar.jpg"), studio: "Marvel Studio", text: randomText },
+        { title: "Secret War", subTitle: "2022", image: require("../../assets/images/secret-war.png"), studio: "Marvel Studio", text: randomText }
     ];
 
     //Recommended Movie Item rendering arror function
     const renderOthersItem = ({ item }) => {
         return (
-            <MovieCard title={item.title} subTitle={item.subTitle} image={item.image} progress={item.progress} />
+            <MovieCard title={item.title} subTitle={item.subTitle} image={item.image} progress={item.progress} onPressAction={()=> navigation.navigate("MovieInfo", {image: item.image, name: item.title, studio: item.studio, text: item.text})}/>
         )
     }
 

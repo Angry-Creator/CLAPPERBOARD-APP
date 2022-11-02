@@ -8,18 +8,19 @@ import MovieCard from '../components/MovieCard';
 
 export default function Dashboard({ navigation }) {
   //Continue Movie Data
+  let randomText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex...";
   const continueWatchingData = [{
-    title: "X-MEN APOCALYPSE", subTitle: "T.1 Episode 1", image: require("../../assets/images/xmen.jpg"), progress: "80%"
+    title: "X-MEN APOCALYPSE", subTitle: "T.1 Episode 1", image: require("../../assets/images/xmen.jpg"), progress: "80%", studio: "Marvel Studio", text: randomText
   },
-  { title: "Harry Potter", subTitle: "T.2 Episode 2", image: require("../../assets/images/harrypotter.jpg"), progress: "50%" },
-  { title: "Avengers End Game", subTitle: "T.2 Episode 2", image: require("../../assets/images/endgame.jpg"), progress: "60%" },
+  { title: "Harry Potter", subTitle: "T.2 Episode 2", image: require("../../assets/images/harrypotter.jpg"), progress: "50%", studio: "Marvel Studio", text: randomText },
+  { title: "Avengers End Game", subTitle: "T.2 Episode 2", image: require("../../assets/images/endgame.jpg"), progress: "60%", studio: "Marvel Studio", text: randomText },
   ];
   //Recommeded Movie Data
   const recommendedMovieData = [
-    { title: "DORA", subTitle: "2022", image: require("../../assets/images/dora.jpg") },
-    { title: "Black Panther", subTitle: "2022", image: require("../../assets/images/blackpanther.jpg") },
-    { title: "Avengers: Infinity War", subTitle: "2022", image: require("../../assets/images/infinitywar.jpg") },
-    { title: "Secret War", subTitle: "2022", image: require("../../assets/images/secret-war.png") }
+    { title: "DORA", subTitle: "2022", image: require("../../assets/images/dora.jpg"), studio: "Marvel Studio", text: randomText },
+    { title: "Black Panther", subTitle: "2022", image: require("../../assets/images/blackpanther.jpg"), studio: "Marvel Studio", text: randomText },
+    { title: "Avengers: Infinity War", subTitle: "2022", image: require("../../assets/images/infinitywar.jpg"), studio: "Marvel Studio", text: randomText },
+    { title: "Secret War", subTitle: "2022", image: require("../../assets/images/secret-war.png"), studio: "Marvel Studio", text: randomText }
   ];
   //Categories text data
   const recommendedCategories = [
@@ -29,13 +30,13 @@ export default function Dashboard({ navigation }) {
   //Continue Watching Item rendering arror function
   const renderContinueWatchingItem = ({ item }) => {
     return (
-      <ContinueWatchingCard title={item.title} subTitle={item.subTitle} image={item.image} progress={item.progress} />
+      <ContinueWatchingCard title={item.title} subTitle={item.subTitle} image={item.image} progress={item.progress} onPressAction={()=> navigation.navigate("MovieInfo", {image: item.image, name: item.title, studio: item.studio, text: item.text})}/>
     )
   }
   //Recommended Movie Item rendering arror function
   const renderOthersItem = ({ item }) => {
     return (
-      <MovieCard title={item.title} subTitle={item.subTitle} image={item.image} progress={item.progress} />
+      <MovieCard title={item.title} subTitle={item.subTitle} image={item.image} progress={item.progress} onPressAction={()=> navigation.navigate("MovieInfo", {image: item.image, name: item.title, studio: item.studio, text: item.text})} />
     )
   }
 
@@ -81,7 +82,7 @@ export default function Dashboard({ navigation }) {
 
       {/* New Release Card */}
       <Text style={styles.newReleaseText}>New Release</Text>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={()=> navigation.navigate("MovieInfo", {image: require('../../assets/images/movie-info-banner.png'), name: "Morbius", studio: "Marvel Studio", text: randomText})}>
         <NewReleaseCard title={"Morbius"} subTitle={"Marvel Studio"} image={require('../../assets/images/studio_image.png')} />
       </TouchableOpacity>
 

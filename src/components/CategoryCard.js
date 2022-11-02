@@ -4,9 +4,9 @@ import { LinearGradient } from "expo-linear-gradient";
 export default function CategoryCard({ text, subText, backgroundColor = ['#16CAF1', 'rgba(1, 67, 167, 0.9)'], reverse }) {
     let textStyle = { left: 70 };
     let subTextStyle = { left: 65 };
-    let gradientLeftStyle = -35;
+    let gradientLeftStyle = -40;
     let gradientStyle = [
-        { rotateY: "-45deg" },
+        { rotateY: "-50deg" },
         { rotateZ: "-3deg" },
     ];
     if (reverse === true) {
@@ -14,7 +14,7 @@ export default function CategoryCard({ text, subText, backgroundColor = ['#16CAF
         subTextStyle = { left: 45 };
         gradientLeftStyle = -10;
         gradientStyle = [
-            { rotateY: "45deg" },
+            { rotateY: "50deg" },
             { rotateZ: "3deg" },
         ];
     }

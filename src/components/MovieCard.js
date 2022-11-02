@@ -1,9 +1,9 @@
 import { View, StyleSheet, Image, TouchableOpacity, Text } from "react-native";
 
 
-export default function MovieCard({ image, title, subTitle, progress }) {
+export default function MovieCard({ image, title, subTitle, progress, onPressAction }) {
     return (
-        <TouchableOpacity style={styles.container}>
+        <TouchableOpacity style={styles.container} onPress={onPressAction}>
             <View style={styles.imageContainer}>
                 <Image source={image} style={styles.image} resizeMode={"cover"} />
                 <View style={[styles.progressBar, { width: progress }]}></View>

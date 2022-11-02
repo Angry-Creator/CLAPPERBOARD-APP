@@ -3,20 +3,24 @@ import MovieDescription from '../components/MovieDescription';
 import GradientButton from "../components/GradientButton";
 import Actor from '../components/Actor';
 
-export default function MovieInfo() {
+export default function MovieInfo({ navigation, route}) {
     //The movie description
-    const movieDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex...";
+    const movieDescription = route.params;
+    const movieImage = movieDescription.image;
+    const movieName = movieDescription.name;
+    const movieStudio = movieDescription.studio;
+    const movieDescText = movieDescription.text;
 
     return (
         <View style={styles.MovieInfocontainer}>
             {/* Image Banner */}
             <View style={styles.BannerContainer}>
-                <Image source={require("../../assets/images/movie-info-banner.png")} resizeMode={"cover"} style={styles.imageStyle} />
+                <Image source={movieImage} resizeMode={"cover"} style={styles.imageStyle} />
             </View>
 
             {/* Movie Description */}
             <View style={styles.movieDescriptionContainer}>
-                <MovieDescription title={"Morbius"} subTitle={"Marvel Studio"} descText={movieDescription} />
+                <MovieDescription title={movieName} subTitle={movieStudio} descText={movieDescText} />
             </View>
 
             {/* Actors List */}
