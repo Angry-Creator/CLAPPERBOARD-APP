@@ -8,6 +8,8 @@ export default function GradientButton({ text, onPress }) {
                     <Text style={{ color: "white" }}>{text}</Text>
                 </View>
             </LinearGradient>
+            <View style={styles.leftGradientShadow}></View>
+            <View style={styles.rightGradientShadow}></View>
         </TouchableOpacity>
     )
 }
@@ -30,4 +32,30 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
     },
+    leftGradientShadow: {
+        position: "relative",
+        left: 0,
+        bottom: 150,
+        width: 100,
+        height: 100,
+        elevation: 75,
+        backgroundColor: "hsla(0, 10%, 90%, 0)",
+        shadowColor: "#19A1BE",
+        shadowOpacity: 30,
+        shadowOffset: {width: 200, height: 200},
+        shadowRadius: 30,
+    },
+    rightGradientShadow: {
+        position: "relative",
+        left: 100,
+        bottom: 250,
+        width: 100,
+        height: 100,
+        elevation: 75,
+        backgroundColor: "hsla(0, 10%, 90%, 0)",
+        shadowColor: "#7D4192",
+        shadowOpacity: 30,
+        shadowOffset: {width: 200, height: 200},
+        shadowRadius: 30,
+    }
 });
