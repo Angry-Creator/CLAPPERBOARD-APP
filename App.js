@@ -5,21 +5,19 @@ import Onboarding from './src/screens/Onboarding';
 import Dashboard from './src/screens/Dashboard';
 import MovieInfo from './src/screens/MovieInfo';
 import SearchPage from './src/screens/SearchPage';
-import Rating from './src/components/Rating';
 
-//creating teh stack navigator object
+//creating the stack navigator object
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
-    // <NavigationContainer>
-    //   <Stack.Navigator initialRouteName="Onboarding">
-    //     <Stack.Screen name="Onboarding" component={Onboarding} options={{ headerShown: false }}/>
-    //     <Stack.Screen name="Dashboard" component={Dashboard} options={{ headerShown: false }}/>
-    //     <Stack.Screen name="MovieInfo" component={MovieInfo} options={{ headerShown: false }}/>
-    //     <Stack.Screen name="SearchPage" component={SearchPage} options={{ headerShown: false }}/>
-    //   </Stack.Navigator>
-    // </NavigationContainer>
-    <Rating/>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Onboarding">
+        <Stack.Screen name="Onboarding" component={Onboarding} options={{ headerShown: false }}/>
+        <Stack.Screen name="Dashboard" component={Dashboard} options={{ headerShown: false }}/>
+        <Stack.Screen name="MovieInfo" component={MovieInfo} options={{ headerShown: false }}/>
+        <Stack.Screen name="SearchPage" component={SearchPage} options={{ headerShown: false }}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 

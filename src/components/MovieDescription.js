@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
+import Rating from "./Rating";
 
 export default function MovieDescription({ title, subTitle, descText }) {
     return (
@@ -10,13 +11,7 @@ export default function MovieDescription({ title, subTitle, descText }) {
                     <Text style={styles.subTitle}>{subTitle}</Text>
                 </View>
                 <View style={styles.ratingContainer}>
-                    <View style={styles.starIconView}>
-                        <MaterialIcons name="star" color={"gold"} size={18} />
-                        <MaterialIcons name="star" color={"gold"} size={18} />
-                        <MaterialIcons name="star" color={"gold"} size={18} />
-                        <MaterialIcons name="star" color={"gold"} size={18} />
-                        <MaterialIcons name="star" color={"gold"} size={18} />
-                    </View>
+                    <Rating/>
                     <Text style={styles.subTitle}>From 342 Views</Text>
                 </View>
             </View>

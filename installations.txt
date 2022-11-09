@@ -12,3 +12,6 @@ npx expo install react-native-screens react-native-safe-area-context
 npx expo install react-native-gesture-handler react-native-reanimated
 npm install @react-navigation/native-stack
 
+//For APIs
+https://rapidapi.com/
+https://rapidapi.com/rapidapi/api/movie-database-alternative/
